@@ -1,11 +1,11 @@
 import React from "react";
 
-const Book = () => {
+const Book = (props) => {
   return (
     <div>
-      <img></img>
-      <p></p>
-      <p></p>
+      <img src={props.img}></img>
+      <p>{props.title}</p>
+      <p>{props.author}</p>
     </div>
   );
 };

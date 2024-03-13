@@ -2,11 +2,7 @@ import React from "react";
 
 const CategoryButton = (props) => {
   return (
-    <button
-      onClick={() => {
-        console.log("clickedddd");
-      }}
-    >
+    <button onClick={props.onClick} type="button">
       {props.children}
     </button>
   );
