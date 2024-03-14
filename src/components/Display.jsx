@@ -5,12 +5,14 @@ const Display = ({ books, noResults }) => {
   return (
     <div>
       {noResults}
-
+      {/* {JSON.stringify(books)} */}
+      {/* main page display */}
       {noResults ? (
         <p>no results returned</p>
       ) : (
         <div>
-          {books.length > 0 &&
+          {books &&
+            books.length > 0 &&
             books.map((item, idx) => {
               // console.log("Authors:", item.volumeInfo.authors);
               // console.log("Img:", item.volumeInfo.imageLinks);
@@ -18,6 +20,7 @@ const Display = ({ books, noResults }) => {
               return (
                 <Book
                   key={idx}
+                  bookId={item.id}
                   img={
                     item.volumeInfo.imageLinks
                       ? item.volumeInfo.imageLinks.smallThumbnail
@@ -33,6 +36,7 @@ const Display = ({ books, noResults }) => {
                       ? item.volumeInfo.authors.join(", ")
                       : "Author unknown"
                   }
+                  // recordId={item.id}
                 ></Book>
               );
             })}
