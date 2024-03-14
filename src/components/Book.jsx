@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import { NavLink } from "react-router-dom";
 
 const Book = (props) => {
   const [addBookState, setAddBookState] = useState(false);
-  const [allBookIds, setAllBookIds] = useState([]);
-  const [recordId, setRecordId] = useState(null);
+  // const [allBookIds, setAllBookIds] = useState([]);
+  // const [recordId, setRecordId] = useState(null);
 
   // let allBookIds = [];
   // let recordId;
@@ -112,7 +113,10 @@ const Book = (props) => {
           <LocalLibraryOutlinedIcon></LocalLibraryOutlinedIcon>
         </button>
       )}
-      <img src={props.img}></img>
+      <NavLink to={`/bookdetail/${props.bookId}`}>
+        <img src={props.img}></img>
+      </NavLink>
+
       <p>{props.title}</p>
       <p>{props.author}</p>
     </div>

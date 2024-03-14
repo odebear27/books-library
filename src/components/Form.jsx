@@ -24,6 +24,7 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
       if (searchType.length > 0) {
         const res = await fetch(
           import.meta.env.VITE_URL +
+            "?q=" +
             searchType +
             "&maxResults=20" +
             "&key=" +
@@ -90,8 +91,8 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
           {item}
         </CategoryButton>
       ))}
-      {searchQuery}
-      {JSON.stringify(noResults)}
+      {/* {searchQuery} */}
+      {/* {JSON.stringify(noResults)} */}
 
       {!searchQueryPassValidation ? (
         <div>please enter something to search</div>

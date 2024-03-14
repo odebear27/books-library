@@ -10,6 +10,7 @@ const MyLibraryDisplay = ({ myLibraryBooks }) => {
           return (
             <MyLibraryBook
               key={idx}
+              bookId={item.fields.bookId}
               img={item.fields.bookImg}
               title={item.fields.bookTitle}
               author={item.fields.bookAuthor}
