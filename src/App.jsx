@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import MyLibraryPage from "./pages/MyLibraryPage";
 import BookDetailPage from "./pages/BookDetailPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div>
+      <NavBar></NavBar>
       <Routes>
         <Route
           path="/"

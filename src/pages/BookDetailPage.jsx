@@ -33,14 +33,30 @@ const BookDetailPage = () => {
       // console.log(data.saleInfo);
       setBookDetail({
         bookId: data.id,
-        img: data.volumeInfo.imageLinks.small,
-        title: data.volumeInfo.title,
-        authors: data.volumeInfo.authors.join(", "),
-        isbn: data.volumeInfo.industryIdentifiers[0].identifier,
-        publisher: data.volumeInfo.publisher,
-        publishedDate: data.volumeInfo.publishedDate,
-        description: data.volumeInfo.description,
-        canonicalVolumeLink: data.volumeInfo.canonicalVolumeLink,
+        img: data.volumeInfo.imageLinks
+          ? data.volumeInfo.imageLinks.small
+          : "No image available",
+        title: data.volumeInfo.title
+          ? data.volumeInfo.title
+          : "No title available",
+        authors: data.volumeInfo.authors
+          ? data.volumeInfo.authors.join(", ")
+          : "No authors available",
+        isbn: data.volumeInfo.industryIdentifiers
+          ? "ISBN " + data.volumeInfo.industryIdentifiers[0].identifier
+          : "No ISBN available",
+        publisher: data.volumeInfo.publisher
+          ? data.volumeInfo.publisher
+          : "No publisher available",
+        publishedDate: data.volumeInfo.publishedDate
+          ? data.volumeInfo.publishedDate
+          : "No published date available",
+        description: data.volumeInfo.description
+          ? data.volumeInfo.description
+          : "No description available",
+        canonicalVolumeLink: data.volumeInfo.canonicalVolumeLink
+          ? data.volumeInfo.canonicalVolumeLink
+          : "No link available",
       });
     }
   };

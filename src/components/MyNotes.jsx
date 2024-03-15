@@ -87,7 +87,7 @@ const MyNotes = ({ bookId }) => {
               key={idx}
               recordId={item.id}
               bookId={bookId}
-              myNotes={myNotes}
+              // myNotes={myNotes}
               getAllNotes={getAllNotes}
             >
               {item.fields.notes}

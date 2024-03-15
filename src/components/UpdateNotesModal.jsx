@@ -5,7 +5,7 @@ import Input from "./Input";
 
 const OverLay = (props) => {
   // const noteRef = useRef();
-  const [note, setNote] = useState("");
+  const [noteToUpdate, setNoteToUpdate] = useState("");
 
   const updateNote = async () => {
     console.log("recordId", props.recordId);
@@ -14,8 +14,8 @@ const OverLay = (props) => {
     if (
       // noteRef.current.value.length > 0 &&
       // noteRef.current.value.length < 300
-      note.length > 0 &&
-      note.length < 300
+      noteToUpdate.length > 0 &&
+      noteToUpdate.length < 300
     ) {
       const url = import.meta.env.VITE_MY_NOTES_URL + "/" + props.recordId;
       const res = await fetch(url, {
@@ -28,7 +28,7 @@ const OverLay = (props) => {
           fields: {
             bookId: props.bookId,
             // notes: noteRef.current.value,
-            notes: note,
+            notes: noteToUpdate,
           },
         }),
       });
@@ -48,8 +48,8 @@ const OverLay = (props) => {
     <>
       {/* <input ref={noteRef} type="text" defaultValue={props.myNotes}></input> */}
       <Input
-        value={note}
-        onChange={(event) => setNote(event.target.value)}
+        value={noteToUpdate}
+        onChange={(event) => setNoteToUpdate(event.target.value)}
       ></Input>
       {/* <button type="button" onClick={updateNote}>
         update

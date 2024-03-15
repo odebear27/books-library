@@ -16,7 +16,7 @@ const MyNotesDisplay = (props) => {
         <UpdateNotesModal
           recordId={props.recordId}
           bookId={props.bookId}
-          myNotes={props.myNotes}
+          // myNotes={props.myNotes}
           setShowUpdateNoteModal={setShowUpdateNoteModal}
           getAllNotes={props.getAllNotes}
         ></UpdateNotesModal>
