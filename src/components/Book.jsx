@@ -96,19 +96,19 @@ const Book = (props) => {
     addBookToMyLibrary();
   };
 
-  const removeBook = () => {
-    setAddBookState(false);
-    // removeBookFromMyLibrary();
-  };
+  // const removeBook = () => {
+  //   setAddBookState(false);
+  //   // removeBookFromMyLibrary();
+  // };
 
   return (
     <div>
       {/* {JSON.stringify(allBookIds)} */}
       {addBookState ? (
-        <button type="button" onClick={removeBook}>
-          <LocalLibraryIcon></LocalLibraryIcon>
-        </button>
+        // <button type="button" onClick={removeBook}>
+        <LocalLibraryIcon></LocalLibraryIcon>
       ) : (
+        // </button>
         <button type="button" onClick={addBook}>
           <LocalLibraryOutlinedIcon></LocalLibraryOutlinedIcon>
         </button>
