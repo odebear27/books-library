@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MyNotesDisplay from "./MyNotesDisplay";
+import Button from "./Button";
+import Input from "./Input";
 
 const MyNotes = ({ bookId }) => {
   const [myNotes, setMyNotes] = useState("");
@@ -27,26 +29,30 @@ const MyNotes = ({ bookId }) => {
   };
 
   const addNotes = async () => {
-    const url = import.meta.env.VITE_MY_NOTES_URL;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: import.meta.env.VITE_AIRTABLE_BEARER,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fields: {
-          bookId: bookId,
-          notes: myNotes,
+    if (myNotes.length > 0 && myNotes.length <= 300) {
+      const url = import.meta.env.VITE_MY_NOTES_URL;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: import.meta.env.VITE_AIRTABLE_BEARER,
+          "Content-Type": "application/json",
         },
-      }),
-    });
+        body: JSON.stringify({
+          fields: {
+            bookId: bookId,
+            notes: myNotes,
+          },
+        }),
+      });
 
-    if (res.ok) {
-      getAllNotes();
-      setMyNotes("");
+      if (res.ok) {
+        getAllNotes();
+        setMyNotes("");
+      } else {
+        console.log("an error occurred");
+      }
     } else {
-      console.log("an error occurred");
+      console.log("input must not be blank");
     }
   };
 
@@ -56,15 +62,21 @@ const MyNotes = ({ bookId }) => {
 
   return (
     <div>
-      <input
+      {/* <input
         type="text"
         value={myNotes}
         onChange={handleChange}
         placeholder="Add something..."
-      ></input>
-      <button type="button" onClick={addNotes}>
+      ></input> */}
+      <Input
+        value={myNotes}
+        onChange={handleChange}
+        placeholder="Add something..."
+      ></Input>
+      {/* <button type="button" onClick={addNotes}>
         Add
-      </button>
+      </button> */}
+      <Button onClick={addNotes}>Add</Button>
       {/* {JSON.stringify(notesDisplay)} */}
       {notesDisplay &&
         notesDisplay.length > 0 &&

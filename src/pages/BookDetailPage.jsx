@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MyLibraryBook from "../components/MyLibraryBook";
 import MyNotes from "../components/MyNotes";
+import BookDetail from "../components/BookDetail";
 
 const BookDetailPage = () => {
   const params = useParams();
@@ -53,14 +54,25 @@ const BookDetailPage = () => {
       <h1>Book Detail Page</h1>
       {/* <h6>id {params.id}</h6> */}
       {/* {JSON.stringify(bookDetail.bookId)} */}
-      <img src={bookDetail.img}></img>
+      {/* <img src={bookDetail.img}></img>
       <p>{bookDetail.title}</p>
       <p>{bookDetail.authors}</p>
       <p>ISBN {bookDetail.isbn}</p>
       <p>{bookDetail.publisher}</p>
       <p>{bookDetail.publishedDate}</p>
       <p>{bookDetail.description}</p>
-      <p>{bookDetail.canonicalVolumeLink}</p>
+      <p>{bookDetail.canonicalVolumeLink}</p> */}
+
+      <BookDetail
+        img={bookDetail.img}
+        title={bookDetail.title}
+        authors={bookDetail.authors}
+        isbn={bookDetail.isbn}
+        publisher={bookDetail.publisher}
+        publishedDate={bookDetail.publishedDate}
+        description={bookDetail.description}
+        canonicalVolumeLink={bookDetail.canonicalVolumeLink}
+      ></BookDetail>
       <MyNotes bookId={bookDetail.bookId}></MyNotes>
     </div>
   );

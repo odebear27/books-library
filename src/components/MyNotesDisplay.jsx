@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UpdateNotesModal from "./UpdateNotesModal";
+import Button from "./Button";
 
 const MyNotesDisplay = (props) => {
   const [showUpdateNoteModal, setShowUpdateNoteModal] = useState(false);
@@ -7,9 +8,10 @@ const MyNotesDisplay = (props) => {
   return (
     <div>
       <p>{props.children}</p>
-      <button type="button" onClick={() => setShowUpdateNoteModal(true)}>
+      {/* <button type="button" onClick={() => setShowUpdateNoteModal(true)}>
         Update
-      </button>
+      </button> */}
+      <Button onClick={() => setShowUpdateNoteModal(true)}>Update</Button>
       {showUpdateNoteModal && (
         <UpdateNotesModal
           recordId={props.recordId}
