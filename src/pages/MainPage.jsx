@@ -4,7 +4,7 @@ import Display from "../components/Display";
 
 const MainPage = ({ books, setBooks, noResults, setNoResults }) => {
   return (
-    <div className="bg-library bg-cover container pt-20">
+    <div className="bg-library bg-cover bg-center container pt-20">
       <Form
         setBooks={setBooks}
         setNoResults={setNoResults}

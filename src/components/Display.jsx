@@ -3,7 +3,7 @@ import Book from "./Book";
 
 const Display = ({ books, noResults }) => {
   return (
-    <div className="container justify-center">
+    <div className="container justify-center py-14">
       {noResults}
       {/* {JSON.stringify(books)} */}
       {/* main page display */}

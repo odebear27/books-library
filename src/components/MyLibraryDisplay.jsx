@@ -12,8 +12,8 @@ const MyLibraryDisplay = ({ myLibraryBooks }) => {
     }
   }, [myLibraryBooks]);
 
-  const GreyCircularProgress = styled(CircularProgress)({
-    color: "grey",
+  const StyledCircularProgress = styled(CircularProgress)({
+    color: "aliceblue",
   });
 
   return (
@@ -21,7 +21,7 @@ const MyLibraryDisplay = ({ myLibraryBooks }) => {
       <div className="m-auto grid gap-8 justify-center grid-cols-2 md:grid-cols-4 lg:grid-cols-6 overflow-hidden p-3">
         {isLoading ? (
           <div className="flex justify-center w-full absolute top-1/4 right-1/4 transform translate-x-1/4 -translate-y-1/4">
-            <GreyCircularProgress></GreyCircularProgress>
+            <StyledCircularProgress></StyledCircularProgress>
           </div>
         ) : // <p>is loading</p>
         myLibraryBooks && myLibraryBooks.length > 0 ? (

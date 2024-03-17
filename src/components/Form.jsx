@@ -83,8 +83,8 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
   };
 
   return (
-    <div className="flex flex-wrap items-center space-x-4">
-      <div className="container flex justify-center">
+    <div className="flex flex-wrap">
+      <div className="container flex justify-center my-4">
         <div className="flex flex-col">
           <SearchInput
             value={searchQuery}
@@ -98,13 +98,16 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
             ""
           )}
         </div>
-
-        <SearchButton onClick={() => handleSearch(searchQuery)}></SearchButton>
+        <div className="flex-shrink-0 my-2">
+          <SearchButton
+            onClick={() => handleSearch(searchQuery)}
+          ></SearchButton>
+        </div>
       </div>
 
-      <div className="mt-4 container">
-        <div className="grid-rows-2">
-          <p className="flex justify-center font-medium mb-2 italic">
+      <div className="container flex justify-center">
+        <div className="grid-rows-2 bg-colour-white opacity-75 w-3/6 rounded">
+          <p className=" flex justify-center font-medium my-4 italic">
             or search for a book by category below...
           </p>
           <div className="flex justify-center flex-wrap font-medium">
