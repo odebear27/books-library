@@ -11,8 +11,8 @@ const NavBar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "hover:text-colour-red hover:decoration-colour-red text-colour-slate mb-5 font-bold pt-10 underline decoration-solid decoration-colour-slate decoration-2 underline-offset-8"
-              : "hover:text-colour-red text-colour-slate mb-5 font-bold pt-10"
+              ? "hover:text-colour-darkBluishGrey hover:decoration-colour-darkBluishGrey text-colour-slate mb-5 font-bold pt-10 underline decoration-solid decoration-colour-slate decoration-2 underline-offset-8"
+              : "hover:text-colour-darkBluishGrey text-colour-slate mb-5 font-bold pt-10"
           }
           to="/"
         >
@@ -23,8 +23,8 @@ const NavBar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "hover:text-colour-red hover:decoration-colour-red text-colour-slate mb-5 font-bold pt-10 underline decoration-solid decoration-colour-slate decoration-2 underline-offset-8"
-              : "hover:text-colour-red text-colour-slate mb-5 font-bold pt-10"
+              ? "hover:text-colour-darkBluishGrey hover:decoration-colour-darkBluishGrey text-colour-slate mb-5 font-bold pt-10 underline decoration-solid decoration-colour-slate decoration-2 underline-offset-8"
+              : "hover:text-colour-darkBluishGrey text-colour-slate mb-5 font-bold pt-10"
           }
           to="mylibrary"
         >

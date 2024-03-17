@@ -27,7 +27,7 @@ const MyLibraryPage = () => {
   }, []);
 
   return (
-    <div className="container pt-20">
+    <div className="bg-library bg-cover container pt-20">
       {/* {JSON.stringify(myLibraryBooks)} */}
       <MyLibraryDisplay myLibraryBooks={myLibraryBooks}></MyLibraryDisplay>
     </div>

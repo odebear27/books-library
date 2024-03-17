@@ -102,7 +102,7 @@ const Book = (props) => {
   // };
 
   return (
-    <div className="bg-slate-100 rounded px-2 py-3 hover:scale-110">
+    <div className="bg-colour-white rounded px-2 py-3 hover:scale-110">
       {/* {JSON.stringify(allBookIds)} */}
 
       <div className="flex justify-center">

@@ -7,10 +7,15 @@ export default {
         colour: {
           red: "#E13F1C",
           slate: "#565454",
-          shadow: "#CCC9C8",
+          shadow: "#727573",
           white: "#FFFFFF",
           grey: "#9B9695",
+          bluishGrey: "#b2cceb",
+          darkBluishGrey: "#87a4c7",
         },
+      },
+      backgroundImage: {
+        library: "url('./assets/library-bg.jpg')",
       },
     },
   },

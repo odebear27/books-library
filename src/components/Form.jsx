@@ -104,10 +104,10 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
 
       <div className="mt-4 container">
         <div className="grid-rows-2">
-          <p className="flex justify-center font-extralight mb-2 italic">
+          <p className="flex justify-center font-medium mb-2 italic">
             or search for a book by category below...
           </p>
-          <div className="flex justify-center flex-wrap">
+          <div className="flex justify-center flex-wrap font-medium">
             {categories.map((item, idx) => (
               <CategoryButton
                 key={idx}
