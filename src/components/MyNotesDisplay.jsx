@@ -6,12 +6,17 @@ const MyNotesDisplay = (props) => {
   const [showUpdateNoteModal, setShowUpdateNoteModal] = useState(false);
 
   return (
-    <div>
-      <p>{props.children}</p>
-      {/* <button type="button" onClick={() => setShowUpdateNoteModal(true)}>
-        Update
-      </button> */}
-      <Button onClick={() => setShowUpdateNoteModal(true)}>Update</Button>
+    <div className="container flex mb-6">
+      <div className="grid-rows-2">
+        <p className="mb-px">{props.children}</p>
+
+        {/* <button type="button" onClick={() => setShowUpdateNoteModal(true)}>
+     Update
+   </button> */}
+
+        <Button onClick={() => setShowUpdateNoteModal(true)}>Update</Button>
+      </div>
+
       {showUpdateNoteModal && (
         <UpdateNotesModal
           recordId={props.recordId}

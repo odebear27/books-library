@@ -26,7 +26,7 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
           import.meta.env.VITE_URL +
             "?q=" +
             searchType +
-            "&maxResults=20" +
+            "&maxResults=24" +
             "&key=" +
             import.meta.env.VITE_KEY
           // { signal: controller.signal }
@@ -83,22 +83,51 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
   };
 
   return (
-    <div>
-      <SearchInput value={searchQuery} onChange={handleChange}></SearchInput>
-      <SearchButton onClick={() => handleSearch(searchQuery)}></SearchButton>
-      {categories.map((item, idx) => (
-        <CategoryButton key={idx} onClick={() => handleSearchCategory(item)}>
-          {item}
-        </CategoryButton>
-      ))}
+    <div className="flex flex-wrap items-center space-x-4">
+      <div className="container flex justify-center">
+        <div className="flex flex-col">
+          <SearchInput
+            value={searchQuery}
+            onChange={handleChange}
+          ></SearchInput>
+          {!searchQueryPassValidation ? (
+            <div className="text-xs text-colour-red font-medium">
+              please enter something to search
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+
+        <SearchButton onClick={() => handleSearch(searchQuery)}></SearchButton>
+      </div>
+
+      <div className="mt-4 container">
+        <div className="grid-rows-2">
+          <p className="flex justify-center font-extralight mb-2 italic">
+            or search for a book by category below...
+          </p>
+          <div className="flex justify-center flex-wrap">
+            {categories.map((item, idx) => (
+              <CategoryButton
+                key={idx}
+                onClick={() => handleSearchCategory(item)}
+              >
+                {item}
+              </CategoryButton>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* {searchQuery} */}
       {/* {JSON.stringify(noResults)} */}
 
-      {!searchQueryPassValidation ? (
+      {/* {!searchQueryPassValidation ? (
         <div>please enter something to search</div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 };

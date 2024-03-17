@@ -102,23 +102,34 @@ const Book = (props) => {
   // };
 
   return (
-    <div>
+    <div className="bg-slate-100 rounded px-2 py-3 hover:scale-110">
       {/* {JSON.stringify(allBookIds)} */}
-      {addBookState ? (
-        // <button type="button" onClick={removeBook}>
-        <LocalLibraryIcon></LocalLibraryIcon>
-      ) : (
-        // </button>
-        <button type="button" onClick={addBook}>
-          <LocalLibraryOutlinedIcon></LocalLibraryOutlinedIcon>
-        </button>
-      )}
-      <NavLink to={`/bookdetail/${props.bookId}`}>
-        <img src={props.img}></img>
-      </NavLink>
 
-      <p>{props.title}</p>
-      <p>{props.author}</p>
+      <div className="flex justify-center">
+        <NavLink to={`/bookdetail/${props.bookId}`}>
+          <img
+            className="shadow-md shadow-colour-shadow h-48 w-36 mb-1 text-sm"
+            src={props.img}
+            alt={props.title}
+          ></img>
+        </NavLink>
+      </div>
+      <div className="flex justify-between items-start">
+        <p className="text-base font-semibold line-clamp-3 mx-1.5">
+          {props.title}
+        </p>
+        {addBookState ? (
+          // <button type="button" onClick={removeBook}>
+          <LocalLibraryIcon></LocalLibraryIcon>
+        ) : (
+          // </button>
+          <button type="button" onClick={addBook}>
+            <LocalLibraryOutlinedIcon></LocalLibraryOutlinedIcon>
+          </button>
+        )}
+      </div>
+
+      <p className="text-sm line-clamp-3 mx-1.5">{props.author}</p>
     </div>
   );
 };

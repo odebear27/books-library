@@ -3,14 +3,14 @@ import Book from "./Book";
 
 const Display = ({ books, noResults }) => {
   return (
-    <div>
+    <div className="container justify-center">
       {noResults}
       {/* {JSON.stringify(books)} */}
       {/* main page display */}
       {noResults ? (
         <p>no results returned</p>
       ) : (
-        <div>
+        <div className="m-auto grid gap-8 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 overflow-hidden p-3">
           {books &&
             books.length > 0 &&
             books.map((item, idx) => {

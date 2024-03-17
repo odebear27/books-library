@@ -34,7 +34,7 @@ const BookDetailPage = () => {
       setBookDetail({
         bookId: data.id,
         img: data.volumeInfo.imageLinks
-          ? data.volumeInfo.imageLinks.small
+          ? data.volumeInfo.imageLinks.smallThumbnail
           : "No image available",
         title: data.volumeInfo.title
           ? data.volumeInfo.title
@@ -66,8 +66,8 @@ const BookDetailPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Book Detail Page</h1>
+    <div className="container pt-20">
+      {/* <h1>Book Detail Page</h1> */}
       {/* <h6>id {params.id}</h6> */}
       {/* {JSON.stringify(bookDetail.bookId)} */}
       {/* <img src={bookDetail.img}></img>

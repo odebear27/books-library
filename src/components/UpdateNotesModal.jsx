@@ -6,6 +6,8 @@ import Input from "./Input";
 const OverLay = (props) => {
   // const noteRef = useRef();
   const [noteToUpdate, setNoteToUpdate] = useState("");
+  const [noteToUpdatePassValidation, setNoteToUpdatePassValidation] =
+    useState(true);
 
   const updateNote = async () => {
     console.log("recordId", props.recordId);
@@ -41,24 +43,43 @@ const OverLay = (props) => {
       }
     } else {
       console.log("input cannot be blank");
+      setNoteToUpdatePassValidation(false);
     }
   };
 
   return (
-    <>
-      {/* <input ref={noteRef} type="text" defaultValue={props.myNotes}></input> */}
-      <Input
-        value={noteToUpdate}
-        onChange={(event) => setNoteToUpdate(event.target.value)}
-      ></Input>
-      {/* <button type="button" onClick={updateNote}>
+    <div className="z-10 w-screen h-screen bg-gray-800/75 fixed top-0 left-0 flex justify-center items-center">
+      <div className="z-100 bg-white fixed top-1/4 left-1/4 w-1/2 overflow-hidden py-5 rounded-md">
+        {/* <input ref={noteRef} type="text" defaultValue={props.myNotes}></input> */}
+        <p className="mx-16 mb-2">Update Note</p>
+        <div className="container flex justify-center">
+          <div className="flex flex-col mb-4">
+            <Input
+              className="w-screen"
+              value={noteToUpdate}
+              onChange={(event) => setNoteToUpdate(event.target.value)}
+              placeholder="Type something..."
+            ></Input>
+
+            {!noteToUpdatePassValidation && (
+              <p className="text-xs text-colour-red font-medium">
+                please enter something
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* <button type="button" onClick={updateNote}>
         update
       </button> */}
-      <Button onClick={updateNote}>Update</Button>
-      <Button onClick={() => props.setShowUpdateNoteModal(false)}>
-        Cancel
-      </Button>
-    </>
+        <div className="flex justify-between mx-16">
+          <Button onClick={updateNote}>Update</Button>
+          <Button onClick={() => props.setShowUpdateNoteModal(false)}>
+            Cancel
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ import Input from "./Input";
 const MyNotes = ({ bookId }) => {
   const [myNotes, setMyNotes] = useState("");
   const [notesDisplay, setNotesDisplay] = useState([]);
+  const [myNotesPassValidation, setMyNotesPassValidation] = useState(true);
 
   const handleChange = (event) => {
     setMyNotes(event.target.value);
@@ -53,6 +54,7 @@ const MyNotes = ({ bookId }) => {
       }
     } else {
       console.log("input must not be blank");
+      setMyNotesPassValidation(false);
     }
   };
 
@@ -61,22 +63,36 @@ const MyNotes = ({ bookId }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container mx-3">
       {/* <input
         type="text"
         value={myNotes}
         onChange={handleChange}
         placeholder="Add something..."
       ></input> */}
-      <Input
-        value={myNotes}
-        onChange={handleChange}
-        placeholder="Add something..."
-      ></Input>
-      {/* <button type="button" onClick={addNotes}>
+      <p className="text-2xl font-semibold mb-2">Notes</p>
+      <div className="mb-6 flex items-center">
+        <div className="flex-grow">
+          <Input
+            value={myNotes}
+            onChange={handleChange}
+            placeholder="Add something..."
+          ></Input>
+
+          {!myNotesPassValidation && (
+            <p className="text-xs text-colour-red font-medium">
+              please enter something
+            </p>
+          )}
+          {/* <button type="button" onClick={addNotes}>
         Add
       </button> */}
-      <Button onClick={addNotes}>Add</Button>
+          <div className="ml-3">
+            <Button onClick={addNotes}>Add</Button>
+          </div>
+        </div>
+      </div>
+
       {/* {JSON.stringify(notesDisplay)} */}
       {notesDisplay &&
         notesDisplay.length > 0 &&
