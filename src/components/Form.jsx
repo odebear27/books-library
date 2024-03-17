@@ -72,6 +72,13 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
     setSearchQuery("");
   };
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      console.log("Enter key was pressed");
+      handleSearch(searchQuery);
+    }
+  };
+
   const handleSearchCategory = (category) => {
     // event.preventDefault();
     setNoResults(false);
@@ -83,54 +90,59 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
   };
 
   return (
-    <div className="flex flex-wrap">
-      <div className="container flex justify-center my-4">
-        <div className="flex flex-col">
-          <SearchInput
-            value={searchQuery}
-            onChange={handleChange}
-          ></SearchInput>
-          {!searchQueryPassValidation ? (
-            <div className="text-xs text-colour-red font-medium">
-              please enter something to search
+    <div className="items-center">
+      <div className="flex justify-center h-[calc(100vh-14rem)] items-center">
+        <div className="flex flex-wrap bg-colour-white opacity-75 w-3/6 rounded">
+          <div className="container flex justify-center my-4">
+            <div className="flex flex-col">
+              <SearchInput
+                value={searchQuery}
+                onChange={handleChange}
+                onKeyDown={(event) => handleKeyDown(event)}
+              ></SearchInput>
+              {!searchQueryPassValidation ? (
+                <div className="text-xs text-colour-red font-medium">
+                  please enter something to search
+                </div>
+              ) : (
+                ""
+              )}
             </div>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="flex-shrink-0 my-2">
-          <SearchButton
-            onClick={() => handleSearch(searchQuery)}
-          ></SearchButton>
-        </div>
-      </div>
-
-      <div className="container flex justify-center">
-        <div className="grid-rows-2 bg-colour-white opacity-75 w-3/6 rounded">
-          <p className=" flex justify-center font-medium my-4 italic">
-            or search for a book by category below...
-          </p>
-          <div className="flex justify-center flex-wrap font-medium">
-            {categories.map((item, idx) => (
-              <CategoryButton
-                key={idx}
-                onClick={() => handleSearchCategory(item)}
-              >
-                {item}
-              </CategoryButton>
-            ))}
+            <div className="flex-shrink-0 my-2">
+              <SearchButton
+                onClick={() => handleSearch(searchQuery)}
+              ></SearchButton>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* {searchQuery} */}
-      {/* {JSON.stringify(noResults)} */}
+          <div className="container flex justify-center">
+            <div className="grid-rows-2">
+              <p className=" flex justify-center font-medium my-4 italic">
+                or search for a book by category below...
+              </p>
+              <div className="flex justify-center flex-wrap font-medium">
+                {categories.map((item, idx) => (
+                  <CategoryButton
+                    key={idx}
+                    onClick={() => handleSearchCategory(item)}
+                  >
+                    {item}
+                  </CategoryButton>
+                ))}
+              </div>
+            </div>
+          </div>
 
-      {/* {!searchQueryPassValidation ? (
+          {/* {searchQuery} */}
+          {/* {JSON.stringify(noResults)} */}
+
+          {/* {!searchQueryPassValidation ? (
         <div>please enter something to search</div>
       ) : (
         ""
       )} */}
+        </div>
+      </div>
     </div>
   );
 };

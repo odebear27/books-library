@@ -4,10 +4,11 @@ const SearchInput = (props) => {
   return (
     <>
       <input
-        className="h-12 border border-black rounded pl-2 w-96 mr-1.5"
+        className="bg-colour-bluishGrey placeholder-colour-slate placeholder-opacity-1 placeholder:font-medium h-12 border outline-colour-slate outline-1 rounded pl-2 w-96 mr-1.5"
         type="text"
         value={props.value}
         onChange={props.onChange}
+        onKeyDown={props.onKeyDown}
         placeholder="Search for a book..."
       ></input>
     </>
