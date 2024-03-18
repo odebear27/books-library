@@ -49,6 +49,7 @@ const MyNotes = ({ bookId }) => {
       if (res.ok) {
         getAllNotes();
         setMyNotes("");
+        setMyNotesPassValidation(true);
       } else {
         console.log("an error occurred");
       }
@@ -64,12 +65,6 @@ const MyNotes = ({ bookId }) => {
 
   return (
     <div className="container mx-3">
-      {/* <input
-        type="text"
-        value={myNotes}
-        onChange={handleChange}
-        placeholder="Add something..."
-      ></input> */}
       <p className="text-2xl font-semibold mb-2">Notes</p>
       <div className="mb-6 flex items-center">
         <div className="flex-grow">
@@ -84,26 +79,20 @@ const MyNotes = ({ bookId }) => {
               please enter something
             </p>
           )}
-          {/* <button type="button" onClick={addNotes}>
-        Add
-      </button> */}
           <div className="ml-3">
-            <Button onClick={addNotes}>Add</Button>
+            <Button onClick={addNotes}>add</Button>
           </div>
         </div>
       </div>
 
-      {/* {JSON.stringify(notesDisplay)} */}
       {notesDisplay &&
         notesDisplay.length > 0 &&
         notesDisplay.map((item, idx) =>
-          // console.log("item", item);
           item.fields.bookId === bookId ? (
             <MyNotesDisplay
               key={idx}
               recordId={item.id}
               bookId={bookId}
-              // myNotes={myNotes}
               getAllNotes={getAllNotes}
             >
               {item.fields.notes}

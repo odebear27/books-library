@@ -7,7 +7,6 @@ const SearchButton = (props) => {
       <SearchIcon style={{ width: "2rem", height: "2rem" }} />
     </button>
   );
-  //   <i class="bi bi-search-heart-fill"></i>;
 };
 
 export default SearchButton;

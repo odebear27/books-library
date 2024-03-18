@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 import GooglePlayBadge from "./../../assets/google-play-badge-logo.svg";
 
 const BookDetail = (props) => {
@@ -28,11 +27,8 @@ const BookDetail = (props) => {
           </a>
         </div>
       </div>
-
-      {/* <p>{props.description}</p> */}
       <p className="text-2xl font-semibold mb-2">Description</p>
       <div dangerouslySetInnerHTML={{ __html: props.description }} />
-      {/* <p>{props.canonicalVolumeLink}</p> */}
     </div>
   );
 };

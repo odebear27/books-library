@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SearchInput from "./SearchInput";
 import SearchButton from "./SearchButton";
 import CategoryButton from "./CategoryButton";
 
-const Form = ({ setBooks, setNoResults, noResults }) => {
+const Form = ({ setBooks, setNoResults }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchQueryPassValidation, setSearchQueryPassValidation] =
     useState(true);
@@ -19,7 +19,6 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
 
   const getBooksByKeyword = async (searchType) => {
     try {
-      // const controller = new AbortController();
       console.log("length", searchQuery.length);
       if (searchType.length > 0) {
         const res = await fetch(
@@ -29,12 +28,10 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
             "&maxResults=24" +
             "&key=" +
             import.meta.env.VITE_KEY
-          // { signal: controller.signal }
         );
 
         if (res.ok) {
           const data = await res.json();
-          // const data = { kind: "books#volumes", totalItems: 0 };
           console.log(data);
           if (data.totalItems === 0) {
             setNoResults(true);
@@ -50,15 +47,6 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
       }
     }
   };
-
-  //   useEffect(() => {
-  //     const controller = new AbortController();
-  //     getBooksByKeyword(controller.signal);
-
-  //     return () => {
-  //       controller.abort();
-  //     };
-  //   }, []);
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
@@ -80,12 +68,10 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
   };
 
   const handleSearchCategory = (category) => {
-    // event.preventDefault();
     setNoResults(false);
     setSearchQueryPassValidation(true);
     setBooks([]);
     console.log("category", category);
-    // setSearchQuery(category);
     getBooksByKeyword(category);
   };
 
@@ -132,15 +118,6 @@ const Form = ({ setBooks, setNoResults, noResults }) => {
               </div>
             </div>
           </div>
-
-          {/* {searchQuery} */}
-          {/* {JSON.stringify(noResults)} */}
-
-          {/* {!searchQueryPassValidation ? (
-        <div>please enter something to search</div>
-      ) : (
-        ""
-      )} */}
         </div>
       </div>
     </div>

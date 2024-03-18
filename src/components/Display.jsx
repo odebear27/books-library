@@ -5,8 +5,6 @@ const Display = ({ books, noResults }) => {
   return (
     <div className="container justify-center py-4">
       {noResults}
-      {/* {JSON.stringify(books)} */}
-      {/* main page display */}
       {noResults ? (
         <p>no results returned</p>
       ) : (
@@ -14,9 +12,6 @@ const Display = ({ books, noResults }) => {
           {books &&
             books.length > 0 &&
             books.map((item, idx) => {
-              // console.log("Authors:", item.volumeInfo.authors);
-              // console.log("Img:", item.volumeInfo.imageLinks);
-              // console.log(idx);
               return (
                 <Book
                   key={idx}
@@ -36,7 +31,6 @@ const Display = ({ books, noResults }) => {
                       ? item.volumeInfo.authors.join(", ")
                       : "Author unknown"
                   }
-                  // recordId={item.id}
                 ></Book>
               );
             })}

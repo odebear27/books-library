@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MyLibraryBook from "../components/MyLibraryBook";
 import MyNotes from "../components/MyNotes";
 import BookDetail from "../components/BookDetail";
 
@@ -30,7 +29,6 @@ const BookDetailPage = () => {
 
     if (res.ok) {
       const data = await res.json();
-      // console.log(data.saleInfo);
       setBookDetail({
         bookId: data.id,
         img: data.volumeInfo.imageLinks
@@ -67,18 +65,6 @@ const BookDetailPage = () => {
 
   return (
     <div className="container pt-20">
-      {/* <h1>Book Detail Page</h1> */}
-      {/* <h6>id {params.id}</h6> */}
-      {/* {JSON.stringify(bookDetail.bookId)} */}
-      {/* <img src={bookDetail.img}></img>
-      <p>{bookDetail.title}</p>
-      <p>{bookDetail.authors}</p>
-      <p>ISBN {bookDetail.isbn}</p>
-      <p>{bookDetail.publisher}</p>
-      <p>{bookDetail.publishedDate}</p>
-      <p>{bookDetail.description}</p>
-      <p>{bookDetail.canonicalVolumeLink}</p> */}
-
       <BookDetail
         img={bookDetail.img}
         title={bookDetail.title}

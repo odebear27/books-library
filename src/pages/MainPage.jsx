@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../components/Form";
 import Display from "../components/Display";
 
-const MainPage = ({ books, setBooks, noResults, setNoResults }) => {
+const MainPage = () => {
+  const [books, setBooks] = useState([]);
+  const [noResults, setNoResults] = useState(false);
+
   return (
     <div className="bg-library bg-cover bg-center container pt-20">
       <Form
