@@ -9,7 +9,7 @@ The following phases were done prior to project completion.
 - Researching on available APIs
 - Deciding on the API
 - Creating user stories on a public board
-- Doing up the wireframe and class hierachy [here ](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link)([amendments](https://drive.google.com/file/d/1Lo_fME0hh4Rmb2LzlvvNwJQjYrbar95b/view?usp=sharing) were made along the way while working on the code)
+- Doing up the wireframe and class hierachy [here](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link) ([amendments](https://drive.google.com/file/d/1Lo_fME0hh4Rmb2LzlvvNwJQjYrbar95b/view?usp=sharing) were made along the way while working on the code)
 - Project proposal to instructors
 - Working on the code
 - Project presentation
