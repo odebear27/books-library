@@ -4,7 +4,6 @@ import Book from "./Book";
 const Display = ({ books, noResults }) => {
   return (
     <div className="container justify-center py-4">
-      {noResults}
       {noResults ? (
         <p>no results returned</p>
       ) : (

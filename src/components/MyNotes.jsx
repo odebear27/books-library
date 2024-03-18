@@ -79,7 +79,7 @@ const MyNotes = ({ bookId }) => {
               please enter something
             </p>
           )}
-          <div className="ml-3">
+          <div className="ml-3 mt-2.5">
             <Button onClick={addNotes}>add</Button>
           </div>
         </div>

@@ -6,7 +6,7 @@ const BookDetail = (props) => {
     <div className="container mx-3 mb-6">
       <div className="container flex mb-6">
         <img
-          className="h-64 shadow-md shadow-colour-shadow"
+          className="h-64 w-48 shadow-md shadow-colour-shadow"
           src={props.img}
         ></img>
 
