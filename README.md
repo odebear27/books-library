@@ -9,7 +9,7 @@ The following phases were done prior to project completion.
 - Researching on available APIs
 - Deciding on the API
 - Creating user stories on a public board
-- Doing up the wireframe and class hierachy [here](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link)([amendments](https://drive.google.com/file/d/1Lo_fME0hh4Rmb2LzlvvNwJQjYrbar95b/view?usp=sharing) were made along the way while working on the code)
+- Doing up the wireframe and class hierachy [here ](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link)([amendments](https://drive.google.com/file/d/1Lo_fME0hh4Rmb2LzlvvNwJQjYrbar95b/view?usp=sharing) were made along the way while working on the code)
 - Project proposal to instructors
 - Working on the code
 - Project presentation
@@ -20,11 +20,22 @@ This web application allows users to search for books by keyword, title, author 
 
 ### Screenshots of Game
 
+Main Page
 ![main page](screenshots/mainpage.jpg)
+
+List of Books on Main Page after searching
 ![main page search](screenshots/mainpage-react.jpg)
+
+List of books on Library Page
 ![library page](screenshots/librarypage.jpg)
+
+Book Detail page
 ![book detail page](screenshots/bookdetailpage.jpg)
+
+Add notes for each book in Book Detail Page
 ![notes](screenshots/notes.jpg)
+
+Update notes modal in Book Detail Page
 ![update notes modal](screenshots/updatenotesmodal.jpg)
 
 ### Technologies Used
@@ -39,10 +50,15 @@ This web application allows users to search for books by keyword, title, author 
 
 - Used for creating the user interface and styling the web application
 
+#### Airtable
+
+- Used as a database for CRUD operations
+
 ### Getting Started
 
-The books library web application is available [here](https://odebear27.github.io/toy-puzzle/index.html).
-A [public board](https://github.com/users/odebear27/projects/2) for planning.
+The books library web application is available [here ](https://books-library-ga.netlify.app/).
+
+A [public board](https://github.com/users/odebear27/projects/2) has been used for planning.
 
 #### Installation
 
@@ -88,4 +104,4 @@ While efforts have been made to ensure compatibility across different screen siz
 
 I would like to acknowledge the below website for the use of image in my project.
 
-1. Background Image: Photo by Max Langelott on [Unsplash](https://unsplash.com/photos/high-raise-photography-of-library-wWQ760meyWI)
+- Background Image: Photo by Max Langelott on [Unsplash](https://unsplash.com/photos/high-raise-photography-of-library-wWQ760meyWI)

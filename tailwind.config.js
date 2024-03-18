@@ -15,7 +15,7 @@ export default {
         },
       },
       backgroundImage: {
-        library: "url('./assets/library-bg.jpg')",
+        library: "url('/library-bg.jpg')",
       },
     },
   },
