@@ -1,24 +1,16 @@
 ## Books Library
 
-### Project Overview
-
-This game was created as part of my project for General Assembly's Software Engineering Immersive Unit 2 - Front-End Development.
-
-The following phases were done prior to project completion.
-
-- Researching on available APIs
-- Deciding on the API
-- Creating user stories on a public board
-- Doing up the wireframe and class hierachy [here](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link) ([amendments](https://drive.google.com/file/d/1Lo_fME0hh4Rmb2LzlvvNwJQjYrbar95b/view?usp=sharing) were made along the way while working on the code)
-- Project proposal to instructors
-- Working on the code
-- Project presentation
-
 ### Description
 
-This web application allows users to search for books by keyword, title, author or category. Users can add the books to "my library" to keep track of the books that they want to read. Upon clicking the book image in the "main" or "my library" pages, users can see more details of the book.
+This web application was created as part of my project for General Assembly's Software Engineering Immersive Unit 2 - Front-End Development.
 
-### Screenshots of Game
+It allows users to search for books by keyword, title, author or category. Users can add the books to "my library" to keep track of the books that they want to read. Upon clicking the book image in the "main" or "my library" pages, users can see more details of the book.
+
+### Class Hierachy
+
+![class hierachy](./screenshots/class_hierachy.jpg)
+
+### Screenshots of Web Application
 
 Main Page
 ![main page](screenshots/mainpage.jpg)
@@ -29,7 +21,7 @@ List of Books on Main Page after searching
 List of books on Library Page
 ![library page](screenshots/librarypage.jpg)
 
-Book Detail page
+Book Detail Page
 ![book detail page](screenshots/bookdetailpage.jpg)
 
 Add notes for each book in Book Detail Page
@@ -37,6 +29,9 @@ Add notes for each book in Book Detail Page
 
 Update notes modal in Book Detail Page
 ![update notes modal](screenshots/updatenotesmodal.jpg)
+
+Clicking on `GET IT ON Google Play` opens the book in Google Play
+![google play](screenshots/google-play.jpg)
 
 ### Technologies Used
 
@@ -54,11 +49,24 @@ Update notes modal in Book Detail Page
 
 - Used as a database for CRUD operations
 
+Screenshot of my_library table in books-library database
+![airtable my library](screenshots/airtable-my-library.jpg)
+
+Screenshot of my_notes table in books-library database
+![airtable my notes](screenshots/airtable-my-notes.jpg)
+
 ### Getting Started
 
-The books library web application is available [here ](https://books-library-ga.netlify.app/).
+The following phases were done prior to project completion.
 
-A [public board](https://github.com/users/odebear27/projects/2) has been used for planning.
+- Researching on available APIs
+- Deciding on the API
+- Creating user stories on a [public board](https://github.com/users/odebear27/projects/2)
+- [Initial planning](https://drive.google.com/file/d/1fM9Zc3V_2jbzrDXYJLUl3-ymQriF0OWO/view?usp=drive_link)
+- Project proposal to instructors
+- Working on the code
+- [Deployment](https://books-library-ga.netlify.app/)
+- Project presentation
 
 #### Installation
 
@@ -102,6 +110,7 @@ While efforts have been made to ensure compatibility across different screen siz
 
 ### Credits
 
-I would like to acknowledge the below website for the use of image in my project.
+This react web application would not have been made possible without the following.
 
+- [Google Books API](https://developers.google.com/books/docs/overview)
 - Background Image: Photo by Max Langelott on [Unsplash](https://unsplash.com/photos/high-raise-photography-of-library-wWQ760meyWI)
