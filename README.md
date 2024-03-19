@@ -110,7 +110,7 @@ While efforts have been made to ensure compatibility across different screen siz
 
 ### Credits
 
-This react web application would not have been made possible without the following.
+This web application would not have been made possible without the following.
 
 - [Google Books API](https://developers.google.com/books/docs/overview)
 - Background Image: Photo by Max Langelott on [Unsplash](https://unsplash.com/photos/high-raise-photography-of-library-wWQ760meyWI)
